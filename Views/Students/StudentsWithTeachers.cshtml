@@ -1,0 +1,36 @@
+﻿@model IEnumerable<MVCschool.Models.student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Students with Teachers</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Student
+            </th>
+            <th>
+                Teacher
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SFullName)
+                </td>
+                <td>
+                    @foreach (var aTeacher in item.Enrollments)
+                    {
+                        @aTeacher.Course.Teacher.TFullName <br />
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
