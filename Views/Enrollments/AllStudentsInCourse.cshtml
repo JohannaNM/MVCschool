@@ -6,11 +6,8 @@
 
 <h1>Programing 1</h1>
 
-@* <p>
-    <a asp-action="Create">Create New</a>
-</p> *@
-<table class="table">
-    <thead>
+<table class="table table-bordered table-hover">
+    <thead class="table-success">
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Student)
@@ -18,7 +15,6 @@
             <th>
                 Teacher
             </th>
-           @*  <th></th> *@
         </tr>
     </thead>
     <tbody>
@@ -30,11 +26,6 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Course.Teacher.TFullName)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.EnrollmentId">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.EnrollmentId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.EnrollmentId">Delete</a>
                 </td>
             </tr>
         }
